@@ -58,10 +58,25 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           // Importante: elimina cualquier padding del ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('Menu cabezal'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
+            SizedBox(
+              height: 240,
+              child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: [
+                      new UserAccountsDrawerHeader(
+                        margin: EdgeInsets.zero,
+                        accountName: new Text('Pablo'),
+                        accountEmail: new Text('pablo@email.com'),
+                        currentAccountPicture: new CircleAvatar(
+                            backgroundImage: new AssetImage('images/paisaje.jfif')
+                        ),
+                      ),
+                    ],
+                  ),
               ),
             ),
             ListTile(
